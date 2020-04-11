@@ -89,6 +89,10 @@ export default function Queue(initialItem) {
     });
   };
 
+  // this.getRawItems = function () {
+  //   return _queue;
+  // }
+
   /**
    * Given an ID for a particular queue item, update the meta on that item.
    *

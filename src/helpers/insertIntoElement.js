@@ -98,8 +98,12 @@ export default (element, contentArg, cursorNode, cursorPosition) => {
 
   // If a cursor node exists, make sure we print BEFORE that, but only if the target
   // element actually contains it. Otherwise, stick it to the end of the element.
-  elementToTypeInto.insertBefore(
-    content,
-    elementToTypeInto.contains(cursorNode) ? cursorNode : null
-  );
+  // elementToTypeInto.insertBefore(
+  //   content,
+  //   elementToTypeInto.contains(cursorNode) ? cursorNode : null
+  // );
+
+  // console.log(content.innerText);
+
+  elementToTypeInto.insertAdjacentHTML("beforeend", content.innerText);
 };
