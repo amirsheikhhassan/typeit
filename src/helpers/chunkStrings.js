@@ -4,6 +4,16 @@ import getParsedBody from "./getParsedBody";
 import getAllTypeableNodes from "./getAllTypeableNodes";
 import isBodyElement from "./isBodyElement";
 
+export const stringToArray = string => {
+  const retVal = [];
+
+  for (const ch of string) {
+    retVal.push(ch);
+  }
+
+  return retVal;
+};
+
 /**
  * Given a node, generate an array of split text and nodes.
  *
@@ -17,10 +27,15 @@ export const constructQueueFromNodes = el => {
       return createCharacterObject(item);
     }
 
-    return toArray(item.nodeValue).map(character => {
+    // console.log(item.nodeValue);
+    console.log(stringToArray(item.nodeValue));
+
+    return stringToArray(item.nodeValue).map(character => {
       return createCharacterObject(character, item);
     });
   });
+
+  console.log(characterObjects);
 
   return flatten(characterObjects);
 };

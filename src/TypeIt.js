@@ -240,6 +240,7 @@ export default function TypeIt(element, options) {
 
   const _fire = async () => {
     _statuses.started = true;
+    return;
 
     let queueItems = _queue.getItems();
     let callbackArgs;
